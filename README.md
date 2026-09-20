@@ -39,6 +39,13 @@ En résumé :
 > ⚠️ Premiers essais d'émission : charge fictive, et garde la main près du bouton d'arrêt. Se connecter
 > à la radio **n'émet jamais rien** : seul **ENVOYER**, une macro F1–F10 ou **TUNE** fait émettre.
 
+## Nouveautés de la V1.9.1
+
+- **Correctif HRD / Icom** : le programme vérifie maintenant que la radio répond sur le port CAT auxiliaire
+  avant d'émettre (simple lecture de fréquence, sans émission) et l'indique clairement sinon. Avant, un
+  mauvais port donnait un faux « CW envoyé ». Le port qui répond est mémorisé.
+- Guide de mise en route corrigé (section HRD).
+
 ## Nouveautés de la V1.9
 
 - **Nouveau moteur de décodage « Fit »** : au lieu de deviner « point ou trait » élément par élément, il

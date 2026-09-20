@@ -136,12 +136,18 @@ HRD sert d'intermédiaire : CW Terminal parle en réseau à HRD, qui pilote la r
 3. **Connecter**.
 
 **Comment part le CW ?**
-- **HRD / Icom** : le PTT passe par HRD et le CW est envoyé **en audio USB** (une note générée par le
-  programme). CW Terminal bascule temporairement la radio en **DATA-U/USB** pendant l'envoi puis restaure
-  le mode. Le son CW est joué sur la **sortie audio par défaut de Windows** : règle-la (Paramètres Windows →
-  Son) sur l'**USB Audio CODEC de la radio** ou sur ton **câble audio virtuel** relié à la radio, et vérifie
-  que la radio accepte l'audio USB en émission (entrée USB / DATA). Le choix « Device » du panneau Décodeur
-  ne concerne que la **réception**.
+- **HRD / Icom** : HRD garde la **fréquence** et le **mode** ; le **CW**, lui, est envoyé par CW Terminal en
+  **commande CI-V (0x17)** au manipulateur interne de la radio, **comme en Icom direct**. Il faut donc
+  **un deuxième chemin CI-V vers la radio, en plus de HRD** : un **port COM que HRD n'utilise pas**.
+  - Avec **Win4Icom**, ce sont ses **ports auxiliaires** (« AUX COM »). Win4Icom garde une extrémité de
+    chaque paire de ports virtuels ; **CW Terminal se branche sur l'autre extrémité** (par exemple COM13 si
+    Win4Icom tient COM12).
+  - Avant d'envoyer, **choisis ce port dans la liste « Port »** de CW Terminal. Depuis la V1.9.1, le programme
+    **vérifie que la radio répond** sur ce port (simple lecture de fréquence, sans émission) et t'écrit
+    clairement dans la barre d'état si ce n'est pas le cas. Le port qui répond est mémorisé.
+  - La radio doit être en **CW** avec **BK-IN** activé (c'est elle qui passe en émission).
+  - Avec un Icom branché en USB directement à HRD, il n'y a pas de port libre : utilise un répartiteur de
+    port ou un port virtuel, ou l'onglet **Icom CI-V** direct.
 - **HRD / Yaesu** : fréquence et PTT par HRD, **manipulation par DTR sur le Standard COM Port** (réglage
   « Port CW » à côté). Radio en CW, **PC KEYING = DTR**.
 
@@ -214,6 +220,8 @@ sans ton action.
 | Yaesu : aucune réponse | Mauvais port ou vitesse | Port **Enhanced**, **CAT RATE = 38400** |
 | La radio n'émet pas le CW (Yaesu) | Manipulation | PC KEYING = DTR, port CW = Standard COM, BK-IN activé, radio en **CW** |
 | La radio n'émet pas le CW (Icom) | Mode / break-in | Radio en **CW**, BK-IN activé, CI-V USB Port « Unlink from REMOTE » |
+| HRD / Icom : « la radio ne répond pas sur COMx » (V1.9.1) | Mauvais port CAT auxiliaire | Choisis le **port partenaire** de l'AUX de Win4Icom (ex. COM13), pas celui que Win4Icom tient lui-même |
+| HRD / Icom : ENVOYER n'émet rien, sans message (V1.9) | Port sans radio derrière : le programme annonçait un faux « CW envoyé » | Passe en V1.9.1, ou choisis le bon port CAT auxiliaire |
 | Rien ne se décode | Audio | Bon **Device**, niveau 20–50 %, radio en CW, pitch sur le signal |
 | Beaucoup de `E` `T` parasites | Bruit / niveau trop bas | Monte le niveau audio, active **Moteur Fit**, place le pitch sur le signal |
 | Un texte double ou décalé | Deux copies ouvertes | Ferme l'autre copie de CW Terminal |
