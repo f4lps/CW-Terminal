@@ -1,0 +1,18 @@
+CW Terminal — Licence d'utilisation
+
+Auteur : F4LPS (developpement@lesf4.fr)
+Copyright (c) 2026 F4LPS — Tous droits réservés sur la conception et l'architecture.
+
+Usage libre pour les radioamateurs. La redistribution est autorisée avec mention
+obligatoire de l'auteur F4LPS.
+
+Toute reproduction partielle ou totale à des fins commerciales est interdite sans
+accord écrit de l'auteur.
+
+LE LOGICIEL EST FOURNI « TEL QUEL », SANS GARANTIE D'AUCUNE SORTE. L'UTILISATEUR
+L'UTILISE SOUS SA PROPRE RESPONSABILITÉ ET DANS LE RESPECT DE LA RÉGLEMENTATION
+APPLICABLE À SA LICENCE RADIOAMATEUR.
+
+Crédit : l'idée d'évaluer une hypothèse (vitesse, seuil) par son ajustement au timing
+Morse est celle de ggmorse (Georgi Gerganov) ; le moteur « Fit » de CW Terminal en est
+une mise en oeuvre originale, écrite par F4LPS.
