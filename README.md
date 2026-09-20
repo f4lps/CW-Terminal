@@ -39,6 +39,15 @@ En résumé :
 > ⚠️ Premiers essais d'émission : charge fictive, et garde la main près du bouton d'arrêt. Se connecter
 > à la radio **n'émet jamais rien** : seul **ENVOYER**, une macro F1–F10 ou **TUNE** fait émettre.
 
+## Nouveautés de la V1.9.2
+
+- **Décodage plus lisible** : la séparation des mots s'adapte à l'espacement de l'opérateur (fini les
+  « 599 5NN » collés), les lettres collées sont séparées, et plus de « ? » parasites au milieu des mots.
+- **Port COM occupé** : au lieu d'un « accès refusé » obscur, le programme **nomme le logiciel** qui tient le
+  port (ex. « COM13 déjà utilisé par HamRadioDeluxe.exe »).
+- **Une seule copie à la fois** : une deuxième copie affiche un message au lieu de se disputer le port et la carte son.
+- Le port série s'ouvre avec DTR/RTS coupés (aucun risque de mise en émission à la connexion).
+
 ## Nouveautés de la V1.9.1
 
 - **Correctif HRD / Icom** : le programme vérifie maintenant que la radio répond sur le port CAT auxiliaire
