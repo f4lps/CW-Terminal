@@ -39,6 +39,22 @@ En résumé :
 > ⚠️ Premiers essais d'émission : charge fictive, et garde la main près du bouton d'arrêt. Se connecter
 > à la radio **n'émet jamais rien** : seul **ENVOYER**, une macro F1–F10 ou **TUNE** fait émettre.
 
+## Nouveautés de la V1.9.3
+
+- **HRD + Icom : envoi CW plus sûr pour la liaison CI-V.** Le texte est envoyé en **messages de 30 caractères au plus**
+  (limite de la commande CI-V de l'Icom) l'un après l'autre, au lieu d'une seule trame avec tout le texte ; les réponses de la
+  radio sont lues (elles ne restent plus sur le bus partagé avec HRD) ; l'arrêt d'un message utilise la commande d'arrêt de la
+  radio. Objectif : éviter le message de HRD « The connection with IC-7300 … has stopped working » après quelques envois.
+- **Journal des trames CI-V** du CW : `%APPDATA%\CWTerminal\cw_terminal_civ.log` (à joindre à un rapport de problème).
+- **Yaesu** : les commandes de mode CW-U et USB utilisent la bonne syntaxe (`MD03;`, `MD02;`).
+- **HRD 6.8 / 6.9 : le port du serveur IP est détecté.** Il est 7809 avec HRD 6.8 mais différent avec HRD 6.9 : « Auto HRD » (et la
+  connexion quand le port du champ ne répond pas) lit maintenant le port sur le processus HRD, puis essaie les ports usuels. Le
+  bouton « Auto HRD » plantait à chaque clic : corrigé.
+- **Icom : CW + BK-IN à la connexion.** Après la connexion (série directe, ou COM direct auxiliaire avec HRD), la radio est passée
+  en **mode CW**, le **BK-IN** est activé (**semi** ou **full** au choix) et la vitesse du manipulateur est calée sur celle du
+  programme ; chaque réglage est **vérifié par relecture** et le résultat s'affiche dans la barre d'état. Case « CW + BK-IN auto
+  (Icom) » pour désactiver. Aucune émission n'est commandée.
+
 ## Nouveautés de la V1.9.2
 
 - **Décodage plus lisible** : la séparation des mots s'adapte à l'espacement de l'opérateur (fini les
