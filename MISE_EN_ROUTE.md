@@ -221,6 +221,8 @@ sans ton action.
 | La radio n'émet pas le CW (Yaesu) | Manipulation | PC KEYING = DTR, port CW = Standard COM, BK-IN activé, radio en **CW** |
 | La radio n'émet pas le CW (Icom) | Mode / break-in | Radio en **CW**, BK-IN activé, CI-V USB Port « Unlink from REMOTE » |
 | HRD / Icom : « la radio ne répond pas sur COMx » (V1.9.1) | Mauvais port CAT auxiliaire | Choisis le **port partenaire** de l'AUX de Win4Icom (ex. COM13), pas celui que Win4Icom tient lui-même |
+| HRD : « HRD IP Server non accessible » ou mauvais port (HRD 6.9) | Le port du serveur IP est 7809 en HRD 6.8, autre en 6.9 | Clique **Auto HRD** : le port est lu sur le processus HRD |
+| HRD affiche « The connection with IC-7300 on COMx has stopped working » après quelques envois (avant V1.9.3) | Trame CI-V trop longue (30 caractères max) et réponses de la radio non lues | Passe en **V1.9.3** ; si ça persiste, envoie `%APPDATA%\CWTerminal\cw_terminal_civ.log` |
 | HRD / Icom : ENVOYER n'émet rien, sans message (V1.9) | Port sans radio derrière : le programme annonçait un faux « CW envoyé » | Passe en V1.9.1, ou choisis le bon port CAT auxiliaire |
 | Rien ne se décode | Audio | Bon **Device**, niveau 20–50 %, radio en CW, pitch sur le signal |
 | Beaucoup de `E` `T` parasites | Bruit / niveau trop bas | Monte le niveau audio, active **Moteur Fit**, place le pitch sur le signal |
