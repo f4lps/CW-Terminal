@@ -16,6 +16,26 @@ Développé par **F4LPS** (developpement@lesf4.fr) — *Ham Spirit*.
    sur place** et tes réglages sont conservés. Ferme CW Terminal avant d'installer.
 3. Lance **CW Terminal** depuis le menu Démarrer ou le Bureau.
 
+### Linux
+
+Sur la page [**Releases**](../../releases), télécharge `cw-terminal_X.Y_amd64.deb` (Ubuntu 22.04, Debian 12 ou plus
+récent, 64 bits), ou le `.tar.gz` pour les autres distributions. Puis déconnecte-toi et reconnecte-toi après ces deux
+commandes, pour avoir accès aux ports série :
+
+```bash
+sudo apt install ./cw-terminal_X.Y_amd64.deb
+sudo usermod -aG dialout $USER
+```
+
+### Mac (en essai)
+
+Sur la page [**Releases**](../../releases), télécharge le `.dmg` `mac-arm64` (Apple Silicon) ou `mac-x86_64` (Intel). Le
+programme n'est pas signé par Apple : au premier lancement, fais clic droit > Ouvrir, puis autorise le micro (c'est lui
+qui donne accès à l'entrée audio de la radio).
+
+Les versions Linux et Mac n'ont pas encore été essayées avec une vraie radio : charge fictive pour les premières
+émissions. Absent hors Windows pour le moment : OmniRig ; HRD seulement à travers le réseau.
+
 ## Mise en route
 
 ➡️ **[Guide de mise en route rapide](MISE_EN_ROUTE.md)** : installation, premier décodage, puis réglages à faire
