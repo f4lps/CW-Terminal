@@ -20,6 +20,15 @@ connexion Yaesu, c'est supprimé depuis la V1.9) : seul le bouton **ENVOYER**, u
 3. Clique **⚙ Réglages** (zone d'envoi) et renseigne **indicatif, prénom, QTH, locateur** : ils servent
    aux macros et au log.
 
+**Sous Linux :** installe le `.deb` avec `sudo apt install ./cw-terminal_X.Y_amd64.deb`, puis
+`sudo usermod -aG dialout $USER`, et déconnecte-toi et reconnecte-toi pour avoir accès aux ports série.
+
+**Sur Mac (en essai) :** le programme n'est pas signé par Apple. Au premier lancement, fais clic droit > Ouvrir, puis
+autorise le micro : c'est lui qui donne accès à l'entrée audio de la radio.
+
+Linux et Mac n'ont pas encore été essayés avec une vraie radio : charge fictive pour les premières émissions. OmniRig
+est absent hors Windows, et HRD ne fonctionne qu'à travers le réseau.
+
 ## 2. Décoder tout de suite, sans radio branchée
 
 Le décodage ne demande **aucune connexion CAT** : il lui suffit du son de ta radio.
